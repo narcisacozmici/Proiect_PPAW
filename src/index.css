@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove Clerk card styling to use our own single card */
+.cl-card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.cl-cardBox {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Ensure all Clerk form elements fit within container */
+.cl-formButtonPrimary,
+.cl-socialButtonsBlockButton,
+.cl-formFieldInput,
+.cl-formFieldInput__password {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Prevent overflow on Clerk root elements */
+.cl-rootBox {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide "Last used" label on social buttons */
+.cl-socialButtonsBlockButton__lastUsed,
+.cl-socialButtonsBlockButton__lastUsedLabel,
+[data-clerk-element="socialButtonsBlockButton"] [class*="lastUsed"],
+[data-clerk-element="socialButtonsBlockButton"] [class*="last-used"],
+.cl-socialButtonsBlockButton > span[class*="last"],
+.cl-socialButtonsBlockButton > div[class*="last"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Hide username field if it's optional (when signing up with Google) */
+.cl-formField[data-required="false"] .cl-formFieldLabel[for*="username"],
+.cl-formFieldInput__username[data-optional="true"] {
+  display: none !important;
+}
+
+/* Hide "Secured by Clerk" and "Development mode" from UserButton popup */
+.cl-userButtonPopoverFooter,
+.cl-userButtonPopoverCard [class*="footer"],
+.cl-userButtonPopoverCard [class*="poweredBy"],
+.cl-userButtonPopoverCard [class*="development"],
+.cl-userButtonPopoverCard [class*="banner"],
+.cl-userButtonPopoverCard [data-clerk-element="footer"],
+.cl-userButtonPopoverCard [data-clerk-element="poweredBy"],
+.cl-userButtonPopoverCard [data-clerk-element="development"],
+.cl-userButtonPopoverCard [data-clerk-element="banner"],
+.cl-userButtonPopoverCard div:has-text("Secured by"),
+.cl-userButtonPopoverCard div:has-text("Development mode"),
+.cl-userButtonPopoverCard div:has-text("clerk"),
+
+[class*="cl-userButtonPopover"] [class*="footer"],
+[class*="cl-userButtonPopover"] [class*="poweredBy"],
+[class*="cl-userButtonPopover"] [class*="development"],
+[class*="cl-userButtonPopover"] [class*="banner"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide footer section in UserButton popover */
+.cl-userButtonPopoverCard > div:last-child,
+.cl-userButtonPopoverCard > footer {
+  display: none !important;
+}
+
+/* Hide "Secured by Clerk" and "Development mode" from UserProfile modal */
+.cl-userProfile-root .cl-footer,
+.cl-userProfile-root [class*="footer"],
+.cl-userProfile-root [class*="cl-footer"],
+.cl-userProfileNavbar .cl-footer,
+.cl-userProfileNavbar [class*="footer"],
+.cl-userProfilePage .cl-footer,
+.cl-userProfilePage [class*="footer"],
+[class*="cl-userProfile"] .cl-footer,
+[class*="cl-userProfile"] [class*="footer"],
+[class*="cl-userProfile"] [class*="poweredBy"],
+[class*="cl-userProfile"] [class*="development"],
+[class*="cl-userProfile"] [class*="banner"],
+.cl-cardBox .cl-footer,
+.cl-rootBox .cl-footer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
